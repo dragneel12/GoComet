@@ -1,0 +1,99 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 text-center"></div>
+    <div class="col-sm-4 font-weight-bold text-center">BONFIRE</div>
+    <div class="col-sm-4 text-center"><button type="button" class="btn btn-outline-secondary" (click)="show()">CART({{cart_value}})</button></div>
+  </div>
+  <hr>
+  <div class="text-center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="assets/images/my.png">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6" >
+                        <ul class="navbar-nav mr-auto">
+                          <li class="nav-item active">
+                          <a class="nav-link" href="#">HOME<span class="sr-only">(current)</span></a>
+                          </li>
+
+                          <li class="nav-item">
+                          <a class="nav-link" href="#">MEN</a>
+                          </li>
+
+                          <li class="nav-item">
+                          <a class="nav-link" href="#">WOMEN</a>
+                          </li>
+
+                          <li class="nav-item">
+                          <a class="nav-link" href="#">LOOKBOOK</a>
+                          </li>
+
+                          <li class="nav-item">
+                          <a class="nav-link" href="#">ABOUT</a>
+                          </li>
+
+                          <li class="nav-item">
+                          <a class="nav-link" href="#">BLOG</a>
+                          </li>
+                        </ul
+                        >
+                        <div class="col-sm-3"></div>
+                        </div>
+            </div>
+    </nav>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-4 d-flex justify-content-center">
+      <img src="assets/images/{{x}}.jpg" width=90% height=100%>
+    </div>
+    <div class="col-sm-6">
+      <h4 class="font-weight-bold">Berrylush</h4>
+      <h5>Women Green Solid Maxi Dress</h5>
+      <hr>
+      <p class="font-weight-normal">PRODUCT DETAILS</p>
+      <p class="font-weight-light">Green solid woven maxi dress, has a V-neck, sleeveless, concealed zip closure, flared hem</p>
+      <p class="font-weight-normal">Material & Care</p>
+      <p class="font-weight-light">Polycrepe</p>
+      <p class="font-weight-light">Hand-wash</p>
+      <hr>
+      <div class="row">
+        <div class=col-3>
+          <select class="form-control form-control-lg" (change)="selected1($event.target.value)">
+              <option *ngFor="let color of colors" [value]="color">{{color}}</option>
+          </select>
+        </div>
+        <div class=col-3>
+          <select class="form-control form-control-lg" (change)="selected2($event.target.value)">
+              <option *ngFor="let size of sizes" [value]="size">{{size}}</option>
+          </select>
+        </div>
+        <div class=col-3>
+          <select class="form-control form-control-lg" (change)="selected3($event.target.value)">
+              <option *ngFor="let q of quantity" [value]="q">{{q}}</option>
+          </select>
+        </div>
+
+      </div>
+      <hr>
+      <div class="row">
+      <div class="col-2"></div>
+      <button type="button" class="btn btn-primary" (click)="cart()">Add To Cart</button>
+      <div class="col-1"></div>
+      <button type="button" class="btn btn-primary" (click)="clear()">Clear selection</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-1 d-flex justify-content-center"><img src="assets/images/{{m[0]}}.jpg" width=90% height=100% (click)="swap_images(0)"></div>
+    <div class="col-sm-1 d-flex justify-content-center"><img src="assets/images/{{m[1]}}.jpg" width=90% height=100% (click)="swap_images(1)"></div>
+    <div class="col-sm-1 d-flex justify-content-center"><img src="assets/images/{{m[2]}}.jpg" width=90% height=100% (click)="swap_images(2)"></div>
+    <div class="col-sm-1 d-flex justify-content-center"><img src="assets/images/{{m[3]}}.jpg" width=90% height=100% (click)="swap_images(3)"></div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
